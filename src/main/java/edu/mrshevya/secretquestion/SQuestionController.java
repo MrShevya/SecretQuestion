@@ -8,7 +8,7 @@ public class SQuestionController {
 
     @GetMapping(value = "/questions/")
     protected String[] getQuestions(){
-        //выгружаем вопросы из базы базовых вопросов, выдаем их под айдишниками стандартных вопросов
+        //выгружаем все вопросы из базы базовых вопросов, выдаем их под айдишниками стандартных вопросов
         String[] avs = new String[] {"a", "b"};
         return avs;
     }
@@ -17,10 +17,10 @@ public class SQuestionController {
     protected String getBaseQuestion(@PathVariable(value = "questionid") Long id){
         return "s";
     }
+    // выдаем один базовый вопрос по id
 
     @PostMapping(value = "/setQuestion/{question}")
     protected void setQuestion(int id, int questionid){ // если questionid равен нулю, задавать свой вопрос, если другой, брать по id из базы вопросов
-
     }
 
     @GetMapping(value = "/getAnswer/{id}")
@@ -34,12 +34,8 @@ public class SQuestionController {
     }
 
     @PostMapping
-    protected void removeQuestion(int id){
+    protected void removeQuestion(int id){ // удалить вопрос по id
 
-    }
-
-    protected String getCurrentQuestion(int id){
-        return "s";
     }
 
 }
